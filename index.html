@@ -1,29 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Netflix</title>
-</head>
-<body>
-    <div class="base-layout">
-        <div class="main">
-            
-            <div class="toolbar">
-                <div class="logo">Netflix</div>
-                <input type="select">
-                <button type="submit">Sign In</button>
-            </div>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Netflix</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                color: #fff;
+                background-color: #212121;
+            }
+
+            .footer {
+                display: flex;
+                justify-content: space-between;
+                padding: 20px;
+            }
+
+            .column {
+                flex: 1;
+                padding: 10px;
+                border: 1px solid #ccc;
+  }
+            .faq {
+              border: 1px solid #ccc;
+              margin: 10px;
+              padding: 10px;
+            }
+          
+            .question {
+              cursor: pointer;
+            }
+          
+            .answer {
+              display: none;
+              margin-top: 10px;
+            }
+          </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="logo"></div>
+            <div class="login"></div>
+        </div>
+        <div class="nav">
+            <ul id="menu"></ul>
+        </div>
+        <div class="main"> 
             <div class="central-info">
-                <h3>Unlimited movies, TV shows, and more</h3>
-                <h4>Watch anywhere. Cancel anytime.</h4>
-                <h5>Ready to watch? Enter your email to create or restart your membership.</h5>
-                <div class="newsletter">
-                    <input type="text" placeholder="Email address">
-                    <button type="submit">Get Started</button>
+                <h1>Unlimited movies, TV shows, and more.</h1>
+                <h2>Watch anywhere. Cancel anytime.</h2>
+                <p>Ready to watch? Enter your email to create or restart your membership.</p>
+                <form action="index.php" method="post">
+                    <input type="email" name="email" id="email" placeholder="Email address">
+                    <input type="submit" value="Get Started">
+                </form>
+            </div>   
+            <div class="faq">
+                <div class="faq-section">
+                    <div class="question">What is Lorem Ipsum?</div>
+                    <div class="answer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique et tortor non volutpat.
+                    </div>
+                </div>              
+                <div class="faq-section">
+                    <div class="question">Why do we use it?</div>
+                    <div class="answer">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tristique et tortor non volutpat.
                 </div>
             </div>
         </div>
-    </div>
-</body>
+        <div class="footer">
+            <p>Questions?</p>
+            <div class="column">
+                <ul>FAQ</ul>
+                <ul>Account</ul>
+                <ul>Jobs</ul>
+                <ul>Buy Gift Cards</ul>
+                <ul>Privacy</ul>
+                <ul>Contact Us</ul>
+                <ul>Legal Notices</ul>
+            </div>
+            <div class="column">
+                <ul>Cancel Membership</ul>
+                <ul>Media Center</ul>
+                <ul>Netflix Shop</ul>
+                <ul>Ways to Watch</ul>
+                <ul>Cookie Preferences</ul>
+                <ul>Speed Test</ul>
+                <ul>Only on Netflix</ul>
+            </div>
+            <div class="column">
+                <ul>Help Center</ul>
+                <ul>Investor Relations</ul>
+                <ul>Redeem Gift Cards</ul>
+                <ul>Terms of Use</ul>
+                <ul>Impressum</ul>
+                <ul>Legal Guarantee</ul>
+                <ul>Ad Choices</ul>
+            </div>
+        </div>
+        <script>
+            const questions = document.querySelectorAll('.question');
+        
+            questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+            });
+        </script>
+    </body>
 </html>

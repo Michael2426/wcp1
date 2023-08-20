@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const languageToggle = document.getElementById('languageToggle');
     const pageTitle = document.getElementById('pageTitle');
     const pageText = document.getElementById('pageText');
+    const buttonEmailSubmit = document.getElementById('buttonEmailSubmit');
 
     let isEnglish = true;
 
@@ -23,6 +24,18 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('toggle works');
         isEnglish = !isEnglish;
     });
+
+    buttonEmailSubmit.addEventListener('click', function() {
+        openEmailPopup();
+    });
+
+    function openEmailPopup() {
+        const popupUrl = 'popup.html';
+        const popupName = 'EmailPopup';
+        const popupFeatures = 'width=500,height=300,resizable=yes,scrollbars=yes';
+
+        window.open(popupUrl, popupName, popupFeatures);
+    }
 });
 
 

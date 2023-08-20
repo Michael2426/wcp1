@@ -4,52 +4,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Netflix</title>
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-                font-family: Arial, sans-serif;
-                color: #fff;
-                background-color: #212121;
-            }
-
-            .footer {
-                display: flex;
-                justify-content: space-between;
-                padding: 20px;
-            }
-
-            .column {
-                flex: 1;
-                padding: 10px;
-                border: 1px solid #ccc;
-  }
-            .faq {
-              border: 1px solid #ccc;
-              margin: 10px;
-              padding: 10px;
-            }
-          
-            .question {
-              cursor: pointer;
-            }
-          
-            .answer {
-              display: none;
-              margin-top: 10px;
-            }
-          </style>
+        <link rel="stylsheet" href="style.css">
     </head>
     <body>
         <div class="header">
             <div class="logo"></div>
             <div class="login"></div>
+            <button id="openButton">Open Another Site</button>
+            <button id="languageToggle">Toggle Language</button>
         </div>
         <div class="nav">
             <ul id="menu"></ul>
         </div>
         <div class="main"> 
             <div class="central-info">
+                <div id="content">
+                    <h1 id="pageTitle">Welcome!</h1>
+                    <p id="pageText">This is the default language content.</p>
+                </div>
                 <h1>Unlimited movies, TV shows, and more.</h1>
                 <h2>Watch anywhere. Cancel anytime.</h2>
                 <p>Ready to watch? Enter your email to create or restart your membership.</p>
@@ -101,16 +73,8 @@
                 <ul>Legal Guarantee</ul>
                 <ul>Ad Choices</ul>
             </div>
-        </div>
-        <script>
-            const questions = document.querySelectorAll('.question');
-        
-            questions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
-            });
-            });
-        </script>
+        </div>        
+
+        <script src="script.js"></script>
     </body>
 </html>
